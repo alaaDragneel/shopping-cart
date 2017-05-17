@@ -1,0 +1,51 @@
+1=> composer global require "laravel/installer"
+
+OR
+
+1=>composer create-project --prefer-dist laravel/laravel blog "5.2.*"->if need last ver. remove the "5.2.*"
+
+2=> laravel new blog-> to creat new app. (blog is the name of the app [ can change ] )
+
+3=> composer require laracasts/generators --dev [ https://github.com/laracasts/Laravel-5-Generators-Extended ]
+
+4=> for factory go to routes factory('App\User::class', 100)
+
+OR
+
+5=> for factory [ php artisan tinker >>> factory('App\User', 100)->create(); ]
+
+6=> Make the model 
+
+7=>make the controller
+8=>make routes
+/*to down load any pAKAGES must in the json file in the first line 
+
+type "repositories":[{"type":"composer","url":"https://packagist.org"}],*/
+
+9=> to use blade forms must do this steps
+9.1=> in the json file in the first line type "repositories":[{"type":"composer","url":"https://packagist.org"}],
+9.2=> Begin by installing this package through Composer. Edit your project's composer.json file to require *** laravelcollective/html ***.
+
+"in the *** require-dev *** part": {
+    "laravelcollective/html": "5.2.*"
+}
+Next, update Composer from the CMD:
+BY
+composer update
+
+Next, add your new provider to the providers array of config/app.php:
+
+  'providers' => [
+    // ...
+    Collective\Html\HtmlServiceProvider::class,
+    // ...
+  ],
+Finally, add two class aliases to the aliases array of config/app.php:
+
+  'aliases' => [
+    // ...
+      'Form' => Collective\Html\FormFacade::class,
+      'Html' => Collective\Html\HtmlFacade::class,
+    // ...
+  ],
+10=>
